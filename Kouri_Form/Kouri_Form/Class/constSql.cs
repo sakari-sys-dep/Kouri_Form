@@ -1047,6 +1047,19 @@ namespace Kouri_Form.Class
             return sb;
         }
 
+        public static StringBuilder CreateSqlselectKM01DateCheck()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("SELECT ");
+            sb.AppendLine("    [km01d_yagou_k]");
+            sb.AppendLine("    ,[km01d_tor_cd]");
+            sb.AppendLine("FROM [DBRET].[dbo].[km01d]");
+            sb.AppendLine("WHERE");
+            sb.AppendLine("[km01d_tor_cd] = @KM04D_TEN_CD");
+            //sb.AppendLine("AND [km04d_ten_cd] = @KM04D_TEN_CD;");
+            return sb;
+        }
+
         public const string SHOHN_SHOHIN_CD = "@SHOHN_SHOHIN_CD";
         public static StringBuilder CreateSqlselectSHOHNshohincodeCheck()
         {
